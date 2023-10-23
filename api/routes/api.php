@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('search', [MapController::class, 'searchMap']);
+Route::get('map_by_place_id/{place_id}', [MapController::class, 'getByPlaceID']);
