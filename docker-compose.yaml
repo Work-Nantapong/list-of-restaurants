@@ -20,13 +20,13 @@ services:
 #    ports:
 #      - "3333:3333"
 
-  #  redis:
-  #    container_name: redis
-  #    image: redis:4-alpine
-  #    ports:
-  #      - "16379:6379"
-  #    volumes:
-  #      - ./redis:/data
+  redis:
+    container_name: redis
+    image: redis:4-alpine
+    ports:
+      - "16379:6379"
+    volumes:
+      - ./redis:/data
 
 #  nginx:
 #    image: nginx:1.21.0
