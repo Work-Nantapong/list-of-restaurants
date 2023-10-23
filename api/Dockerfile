@@ -8,5 +8,5 @@ RUN #composer update
 FROM php:8.2.7-apache-buster
 COPY --from=builder /var/www/html /var/www/html
 #RUN composer install
-RUN chmod -R 755 storage/
+RUN chmod -R 777 storage/
 RUN php artisan key:generate
