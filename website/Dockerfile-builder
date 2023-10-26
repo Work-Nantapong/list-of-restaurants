@@ -1,4 +1,4 @@
-# docker build -t vue-builder:0.0.1 .
+# docker build -f Dockerfile-builder -t vue-builder:0.0.1 .
 FROM node:20.2.0
 
 WORKDIR /app
