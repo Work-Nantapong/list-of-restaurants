@@ -12,6 +12,7 @@ $ chmod -R 777 storage/
 $ docker build -f Dockerfile-builder -t laravel-builder:0.0.1 .
 $ docker run --rm -v .:/var/www/html laravel-builder:0.0.1 composer install
 $ docker run --rm -v .:/var/www/html laravel-builder:0.0.1 npm install
+$ cp .env.example .env
 $ docker run --rm -v .:/var/www/html laravel-builder:0.0.1 php artisan key:generate
 
 # docker start serve
