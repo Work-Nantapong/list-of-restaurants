@@ -4,6 +4,11 @@ import ResponseData from "@/types/ResponseData"
 import ListItem from "@/components/Lists/ListItem.vue";
 
 export default {
+  created() {
+    if (!this.$cookie.getCookie('token')) {
+      this.$router.replace({ path: '/login' });
+    }
+  },
   name: "restaurant-list",
   components: {ListItem},
   data() {
@@ -79,8 +84,12 @@ export default {
   height: 700px;
 }
 
+.search {
+  background-color: #c2a691;
+}
+
 .button {
-  background-color: #7e4d2e;
+  background-color: #775c3f;
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
