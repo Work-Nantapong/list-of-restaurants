@@ -1,0 +1,10 @@
+# docker build -f Dockerfile-builder -t vue-builder:0.0.1 .
+FROM node:20.2.0
+
+WORKDIR /app
+
+RUN npm install -g @vue/cli
+RUN npm install -g @vitejs/plugin-vue
+
+# build node_modules
+# docker run --rm -v .:/app vue-builder:0.0.1 npm install

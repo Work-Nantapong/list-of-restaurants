@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  api:
+    image: laravel-builder:0.0.1
+    volumes:
+      - ./api:/var/www/html:cache
+    ports:
+      - "9000:80"
+    links:
+      - database
+    restart: always
+
+  website:
+    image: vue-builder:0.0.1
+    volumes:
+      - ./website:/app
+    ports:
+      - "8000:8000"
+    command: npm run dev
+
+  redis:
+    container_name: redis
+    image: redis:4-alpine
+    ports:
+      - "16379:6379"
+    volumes:
+      - ./redis:/data
+
+  database:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: 1stlogin
+    ports:
+      - 3306:3306
+    hostname: mariadb
+    volumes:
+      - ./mariadb:/var/lib/mysql
