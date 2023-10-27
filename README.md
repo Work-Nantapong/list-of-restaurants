@@ -13,6 +13,8 @@ $ docker build -f Dockerfile-builder -t laravel-builder:0.0.1 .
 $ docker run --rm -v .:/var/www/html laravel-builder:0.0.1 composer install
 $ docker run --rm -v .:/var/www/html laravel-builder:0.0.1 npm install
 $ cp .env.example .env
+
+# Push your google api key on GOOGLE_API_KEY in api/.env
 $ docker run --rm -v .:/var/www/html laravel-builder:0.0.1 php artisan key:generate
 
 # docker start serve
